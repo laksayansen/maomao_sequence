@@ -16,11 +16,21 @@
         </header>
 
         <main>
+            <div class="toggle">
+                <button id="btnA" class="active" onclick="switchVersion('A')">Version A</button>
+                <button id="btnB" onclick="switchVersion('B')">Version B</button>
+            </div>
             <section class="story">
                 <h2 id="storyTitle">Weekdays</h2>
 
                 <div class="frame">
                     <img id="storyImage" src="images/kusuriya2.jpeg" alt="Maomao staring at a cup of flower tea">
+                </div>
+
+                <div class="dots">
+                    <span class="dot" onclick="goToStep(0)"></span>
+                    <span class="dot" onclick="goToStep(1)"></span>
+                    <span class="dot" onclick="goToStep(2)"></span>                
                 </div>
 
                 <p id="stepLabel">intro</p>
@@ -30,6 +40,7 @@
                     <button onclick="prevImage()">Previous</button>
                     <button onclick="nextImage()">Next</button>
                 </div>
+                <p class="hint">You can also click the image or use the left and right arrow keys.</p>
             </section>
         </main>
         <script src="js/script.js"></script>

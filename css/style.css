@@ -21,6 +21,24 @@ body {
     margin-top: 8px;
 }
 
+.toggle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 20px 0;
+}
+
+.toggle button {
+    background-color: #f5ecd7;
+    color: #2e5d4b;
+    border: 2px solid #2e5d4b;
+}
+
+.toggle button.active {
+    background-color: #2e5d4b;
+    color: #f5ecd7;
+}
+
 .story {
     max-width: 800px;
     margin: 20px auto 40px;
@@ -30,10 +48,36 @@ body {
     border-radius: 8px;
 }
 
+#storyTitle {
+    color: #8a6e4b;
+    margin-top: 0;
+}
+
 .frame img {
     width: 100%;
     display: block;
     border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.25s;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #2e5d4b;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #2e5d4b;
 }
 
 #stepLabel {
@@ -45,6 +89,7 @@ body {
 #caption {
     margin-top: 0;
     line-height: 1.6;
+    min-height: 3.2em;
 }
 
 .buttons {
@@ -62,4 +107,53 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f7a63;
+}
+
+.toggle button:hover {
+    background-color: #dfe9e2;
+}
+
+.toggle button.active:hover {
+    background-color: #3f7a63;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+button:focus-visible,
+.dot:focus-visible {
+    outline: 3px solid #8a6e4b;
+    outline-offset: 2px;
+}
+
+.hint {
+    font-size: 0.9rem;
+    color: #6b5a44;
+}
+
+footer {
+    padding: 0 20px 30px;
+    font-size: 0.85rem;
+    color: #6b5a44;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+@media (max-width: 600px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .story {
+        margin: 16px 12px 30px;
+        padding: 16px;
+    }
 }
